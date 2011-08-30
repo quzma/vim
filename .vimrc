@@ -1,5 +1,5 @@
 "{{{ Vundle
-	"{{{ Voodo
+	"{{{ Voodoo
 	set nocompatible               " be iMproved
 	filetype off                   " required!
 	set rtp+=~/.vim/bundle/vundle/
@@ -37,7 +37,7 @@
 	Bundle 'Gundo'
 	Bundle 'matchit.zip'
 	Bundle 'phpcomplete.vim'
-	Bundle 'svndiff.vim'
+	Bundle 'svndiff'
 	Bundle 'Tail-Bundle'
 	Bundle 'vcscommand.vim'
 	Bundle 'FuzzyFinder'
