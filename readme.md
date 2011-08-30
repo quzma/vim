@@ -14,3 +14,6 @@ vim
 :BundleInstall
 
 Restart vim... and presto!
+
+#Pro tip
+* snipMate keymapping need to be changed in ~/.vim/bundle/snipmate.vim/after/plugin/snipMate.vim if it bothers you that it interferes with the FoolishTab() backup
