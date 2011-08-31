@@ -68,9 +68,6 @@
 	set smartcase
 	set gdefault
 	set hlsearch
-	"Automatically save and load views
-	au BufWritePre * mkview
-	au! BufReadPost,BufWritePost * silent loadview
 "}}}
 "{{{Colors and visual
 	if has("gui_running")
