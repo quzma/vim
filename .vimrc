@@ -258,9 +258,20 @@
 "}}}
 "{{{Tagbar
 	noremap <F8> :TagbarToggle<CR>
-	let g:tagbar_autofocus = 0
-	let g:tagbar_autoshowtag = 0
+	let g:tagbar_autofocus = 1
+	let g:tagbar_autoshowtag = 1
 	let g:tagbar_singleclick = 1
+	let g:tagbar_compact = 1
+
+	let g:tagbar_type_php = {
+	    \ 'kinds' : [
+	        \ 'i:interfaces',
+			\ 'c:classes',
+	        \ 'd:constant definitions',
+	        \ 'f:functions',
+	        \ 'j:javascript functions'
+	    \ ]
+	\ }
 "}}}
 "{{{FuzzyFinder
 	let g:fuf_modesDisable = []
@@ -324,4 +335,5 @@ nnoremap <F10> :IndentGuidesToggle<CR>
 let g:ruby_debugger_default_script = 'script/rails s'
 "}}}
 
+let g:vimwiki_folding=1
 " vim: foldenable foldmethod=marker foldcolumn=1 foldlevel=0
