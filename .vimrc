@@ -135,8 +135,6 @@
 	noremap ć $
 	noremap <Space> /
 	noremap <C-CR> o<Esc>
-	"inoremap {{ {<CR>}<ESC>ko<TAB> 
-	"inoremap (( (<CR>)<ESC>ko<TAB>
 	nnoremap <leader>b :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>		"Open link under cursor in browser
 	au FileType * setl fo-=cro "Disable auto comments
 	nmap <C-q> :Kwbd<CR>
@@ -156,7 +154,6 @@
 "}}}
 "{{{ F7 - copypasta
 	"copy
-	"vmap <F7> "+ygv"zy`>
 	vmap <F7> "+ygv<Esc>
 	"paste (Shift-F7 to paste after normal cursor, Ctrl-F7 to paste over visual selection)
 	nmap <S-F7> "+gP
@@ -165,9 +162,6 @@
 	vmap <C-F7> "+p`]
 	cmap <F7> <C-r><C-o>+
 	noremap <C-a> <Esc>gg"+yG
-	"copy register
-	noremap <M-,> @p
-	inoremap <M-,> @p
 "}}}
 "{{{ Easytags
     let g:easytags_on_cursorhold = 0
@@ -199,7 +193,7 @@
 	endfunction
 
 	set completeopt+=longest
-	set completeopt-=preview
+	set completeopt-=preview "Preview doesnt seem to close
 	inoremap <C-l> <C-x><C-o>
 	inoremap <C-k> <C-x><C-u>
 	inoremap <S-Tab> <Tab>
