@@ -31,6 +31,7 @@
 	Bundle 'astashov/vim-ruby-debugger'
 	Bundle 'chrismetcalf/vim-yankring'
 	Bundle 'mattn/zencoding-vim'
+	Bundle 'fholgado/minibufexpl.vim'
 	"}}}
 	"{{{ vim-scripts repos
 	Bundle 'ManPageView'
@@ -44,6 +45,7 @@
 	Bundle 'scratch.vim'
 	Bundle 'vimwiki'
 	Bundle 'showmarks--Politz'
+	"Bundle 'TabBar'
 	"}}}
 "}}} 
 "{{{ Basic
@@ -164,7 +166,7 @@
 	noremap <C-a> <Esc>gg"+yG
 "}}}
 "{{{ Easytags
-    let g:easytags_on_cursorhold = 0
+    let g:easytags_on_cursorhold = 1
 "}}}
 "{{{Move lines
 	nnoremap <M-j> :m+<CR>==
@@ -173,14 +175,6 @@
 	inoremap <M-k> <Esc>:m-2<CR>==gi
 	vnoremap <M-j> :m'>+<CR>gv=`<my`>mzgv`yo`z
 	vnoremap <M-k> :m'<-2<CR>gv=`>my`<mzgv`yo`z
-"}}}
-"{{{Window related commands
-	noremap <C-k> <C-W>k
-	noremap <C-j> <C-W>j
-	noremap <C-h> <C-W>h
-	noremap <C-l> <C-W>l
-	noremap <C-x> <C-W>c
-	noremap <Leader>wx :bd<CR>
 "}}}
 "{{{Autocomplete
 	function! FoolishTab() "Uses Tab or C-n dependant on context (simplified SuperTab or SmartTab principle
@@ -200,16 +194,6 @@
 	nnoremap <S-Tab> <Tab>
 	vnoremap <S-Tab> <Tab>
 	inoremap <Tab> <C-r>=FoolishTab()<CR>
-"}}}
-"{{{ tabbar - if I try it again
-	"let g:Tb_ModSelTarget = 1
-	"hi link Tb_VisibleNormal DiffChange
-	"hi link Tb_VisibleChanged DiffDelete
-	"let g:Tb_MoreThanOne = 1
-	"let g:Tb_TabWrap = 0
-	"let g:Tb_cTabSwitchBufs = 0
-	"let g:Tb_MaxSize = 3
-	"autocmd BufWritePost,CursorHold,CursorHoldI * :TbAup
 "}}}
 "{{{delimitmate
         let delimitMate_expand_cr = 1
@@ -327,6 +311,10 @@ nnoremap <F10> :IndentGuidesToggle<CR>
 "}}}
 "{{{Ruby debugger
 let g:ruby_debugger_default_script = 'script/rails s'
+"}}}
+"{{{ minibufexpl
+  let g:miniBufExplShowBufNumbers = 0
+  let g:miniBufExplMapWindowNavVim = 1
 "}}}
 
 let g:vimwiki_folding=1
