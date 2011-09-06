@@ -26,4 +26,4 @@ Restart vim... and presto!
 * Rubydebug original mappings can also be a PITA, you also need to change them in the plugin directly
 
 #Todo
-* make script to automate pro tips
+* make script to automate installation and pro tips
