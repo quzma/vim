@@ -7,13 +7,13 @@ Everything is handled through vundle, so just vimrc here.
 
 clone the repo to ~/.vim
 
-inside the ~./vim folder:
+inside the ~/.vim folder:
 
 git submodule init
 
 git submodule update
 
-ln -s ~./vim/.vimrc ~/.vimrc
+ln -s ~/.vim/.vimrc ~/.vimrc
 
 vim
 
