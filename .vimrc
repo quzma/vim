@@ -32,6 +32,7 @@
 	Bundle 'chrismetcalf/vim-yankring'
 	Bundle 'mattn/zencoding-vim'
 	Bundle 'fholgado/minibufexpl.vim'
+	Bundle 'ndreynolds/vim-cakephp'
 	"}}}
 	"{{{ vim-scripts repos
 	Bundle 'ManPageView'
@@ -148,6 +149,7 @@
 	noremap <M-h> :bp<CR>
 	noremap <M-l> :bn<CR>
 	noremap <C-Tab> :bn<CR>
+	noremap <C-x> <C-W>c
 "}}}
 "{{{Semicolon macro
 	let @p='A;'
@@ -236,7 +238,7 @@
 "}}}
 "{{{Tagbar
 	noremap <F8> :TagbarToggle<CR>
-	let g:tagbar_autofocus = 1
+	let g:tagbar_autofocus = 0
 	let g:tagbar_autoshowtag = 1
 	let g:tagbar_singleclick = 1
 	let g:tagbar_compact = 1
@@ -315,7 +317,13 @@ let g:ruby_debugger_default_script = 'script/rails s'
 "{{{ minibufexpl
   let g:miniBufExplShowBufNumbers = 0
   let g:miniBufExplMapWindowNavVim = 1
+  "leave as soon as entering minibufexpl window - prevent shennanigans with other plugins (tagbar et al)
+  au BufEnter -MiniBufExplorer- :exe "normal j"   
 "}}}
-
+"{{{ cakephp-vim
+	nnoremap <Leader>cc :Ccontroller<CR>
+	nnoremap <Leader>cm :Cmodel<CR>
+	nnoremap <Leader>cv :Cview<CR>
+"}}}
 let g:vimwiki_folding=1
 " vim: foldenable foldmethod=marker foldcolumn=1 foldlevel=0
