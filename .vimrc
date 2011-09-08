@@ -31,8 +31,8 @@
 	Bundle 'astashov/vim-ruby-debugger'
 	Bundle 'chrismetcalf/vim-yankring'
 	Bundle 'mattn/zencoding-vim'
-	Bundle 'fholgado/minibufexpl.vim'
 	Bundle 'ndreynolds/vim-cakephp'
+	Bundle 'mattn/gist-vim'
 	"}}}
 	"{{{ vim-scripts repos
 	Bundle 'ManPageView'
@@ -46,7 +46,6 @@
 	Bundle 'scratch.vim'
 	Bundle 'vimwiki'
 	Bundle 'showmarks--Politz'
-	"Bundle 'TabBar'
 	"}}}
 "}}} 
 "{{{ Basic
@@ -71,6 +70,7 @@
 	set smartcase
 	set gdefault
 	set hlsearch
+	set confirm
 "}}}
 "{{{Colors and visual
 	if has("gui_running")
@@ -126,10 +126,16 @@
 	nnoremap <Leader>ge :Gedit HEAD<CR>
 	nnoremap <Leader>gs :Gstatus<CR>
 	nnoremap <Leader>gd :Gdiff<CR>
-	nnoremap <Leader>gb :Gblame<CR>
+	nnoremap <Leader>gn :Gblame<CR>
 	nnoremap <Leader>gR :Gremove<CR>
 	nnoremap <Leader>gc :Gcommit<CR>
 	nnoremap <Leader>gl :Glog<CR>
+	nnoremap <Leader>gb :Gbrowse<CR>
+	autocmd BufReadPost fugitive://* set bufhidden=delete
+	autocmd User fugitive
+	  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+	  \   nnoremap <buffer> <C-u> :edit %:h<CR> |
+	  \ endif
 "}}}
 "{{{Misc
 	nnoremap <CR> :noh<CR><CR>
@@ -149,7 +155,6 @@
 	noremap <M-h> :bp<CR>
 	noremap <M-l> :bn<CR>
 	noremap <C-Tab> :bn<CR>
-	noremap <C-x> <C-W>c
 "}}}
 "{{{Semicolon macro
 	let @p='A;'
@@ -314,16 +319,22 @@ nnoremap <F10> :IndentGuidesToggle<CR>
 "{{{Ruby debugger
 let g:ruby_debugger_default_script = 'script/rails s'
 "}}}
-"{{{ minibufexpl
-  let g:miniBufExplShowBufNumbers = 0
-  let g:miniBufExplMapWindowNavVim = 1
-  "leave as soon as entering minibufexpl window - prevent shennanigans with other plugins (tagbar et al)
-  au BufEnter -MiniBufExplorer- :exe "normal j"   
-"}}}
 "{{{ cakephp-vim
 	nnoremap <Leader>cc :Ccontroller<CR>
 	nnoremap <Leader>cm :Cmodel<CR>
 	nnoremap <Leader>cv :Cview<CR>
 "}}}
-let g:vimwiki_folding=1
+"{{{ Window related
+noremap <C-k> <C-W>k
+noremap <C-j> <C-W>j
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+noremap <C-x> <C-W>c
+"}}}
+"{{{ vimwiki
+	let g:vimwiki_folding=1
+"}}}
+"{{{ gist-vim
+	let g:gist_open_browser_after_post = 1
+"}}}
 " vim: foldenable foldmethod=marker foldcolumn=1 foldlevel=0
