@@ -98,7 +98,7 @@
 "{{{Backup
 	set backup
 	set backupdir=~/.vim/backup/
-	set directory=~/.vim/backup/
+	set directory=~/.vim/backup//
 "}}}
 "{{{ Undo and Gundo
 	set undofile 
