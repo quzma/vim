@@ -22,6 +22,7 @@
 	Bundle 'tpope/vim-haml'
 	Bundle 'tpope/vim-rails'
 	Bundle 'tpope/vim-surround'
+	Bundle 'tpope/vim-repeat'
 	Bundle 'vexxor/kwbd.vim'
 	Bundle 'vexxor/phpdoc.vim'
 	Bundle 'vexxor/zenburn.vim'
@@ -33,6 +34,10 @@
 	Bundle 'mattn/zencoding-vim'
 	Bundle 'ndreynolds/vim-cakephp'
 	Bundle 'mattn/gist-vim'
+	Bundle 'kana/vim-textobj-user'
+	Bundle 'nelstrom/vim-textobj-rubyblock'
+	Bundle 'michaeljsmith/vim-indent-object'
+	Bundle 'kchmck/vim-coffee-script' 
 	"}}}
 	"{{{ vim-scripts repos
 	Bundle 'ManPageView'
@@ -136,6 +141,8 @@
 	  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
 	  \   nnoremap <buffer> <C-u> :edit %:h<CR> |
 	  \ endif
+	nnoremap <C-Right> :cnext<CR>
+	nnoremap <C-Left> :cprev<CR>
 "}}}
 "{{{Misc
 	nnoremap <CR> :noh<CR><CR>
@@ -147,7 +154,6 @@
 	nnoremap <leader>b :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>		"Open link under cursor in browser
 	au FileType * setl fo-=cro "Disable auto comments
 	nmap <C-q> :Kwbd<CR>
-	noremap :trim  :%s/\silent\+$//
 	if !exists(":DiffOrig")
 	  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 			  \ | wincmd p | diffthis
@@ -155,6 +161,7 @@
 	noremap <M-h> :bp<CR>
 	noremap <M-l> :bn<CR>
 	noremap <C-Tab> :bn<CR>
+	nnoremap <leader>f gg=G
 "}}}
 "{{{Semicolon macro
 	let @p='A;'
