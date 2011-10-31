@@ -24,6 +24,7 @@ Restart vim... and presto!
 #Pro tip
 * snipMate keymapping need to be changed in ~/.vim/bundle/snipmate.vim/after/plugin/snipMate.vim if it bothers you that it interferes with the FoolishTab() backup
 * Rubydebug original mappings can also be a PITA, you also need to change them in the plugin directly
+* run git checkout master in bundle/vundle folder to allow vundle to manage itself.
 
 #Todo
 * make script to automate installation and pro tips
