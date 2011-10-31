@@ -26,6 +26,7 @@
 	Bundle 'vexxor/kwbd.vim'
 	Bundle 'vexxor/phpdoc.vim'
 	Bundle 'vexxor/zenburn.vim'
+	Bundle 'vexxor/ManPageView'
 	Bundle 'xolox/vim-easytags'
 	Bundle 'nathanaelkane/vim-indent-guides'
 	Bundle 'clones/vim-l9'
@@ -38,9 +39,9 @@
 	Bundle 'nelstrom/vim-textobj-rubyblock'
 	Bundle 'michaeljsmith/vim-indent-object'
 	Bundle 'kchmck/vim-coffee-script' 
+	Bundle 'Lokaltog/vim-easymotion'
 	"}}}
 	"{{{ vim-scripts repos
-	Bundle 'ManPageView'
 	Bundle 'Gundo'
 	Bundle 'matchit.zip'
 	Bundle 'phpcomplete.vim'
@@ -51,6 +52,8 @@
 	Bundle 'scratch.vim'
 	Bundle 'vimwiki'
 	Bundle 'showmarks--Politz'
+	Bundle 'EnhancedJumps'
+	Bundle 'IndexedSearch'
 	"}}}
 "}}} 
 "{{{ Basic
@@ -63,7 +66,7 @@
 	set nocursorcolumn
 	set cursorline 
 	set autoindent
-	set updatetime=2000
+	set updatetime=4000
 	set hidden
 	set so=5 " Keep 5 lines (top/bottom) for scope
 	set encoding=utf-8
@@ -103,7 +106,7 @@
 "{{{Backup
 	set backup
 	set backupdir=~/.vim/backup/
-	set directory=~/.vim/backup/
+	set directory=~/.vim/backup//
 "}}}
 "{{{ Undo and Gundo
 	set undofile 
@@ -181,6 +184,7 @@
 "}}}
 "{{{ Easytags
     let g:easytags_on_cursorhold = 1
+	let g:easytags_updatetime_autodisable = 1
 "}}}
 "{{{Move lines
 	nnoremap <M-j> :m+<CR>==
@@ -250,7 +254,7 @@
 "}}}
 "{{{Tagbar
 	noremap <F8> :TagbarToggle<CR>
-	let g:tagbar_autofocus = 0
+	let g:tagbar_autofocus = 1
 	let g:tagbar_autoshowtag = 1
 	let g:tagbar_singleclick = 1
 	let g:tagbar_compact = 1
@@ -343,5 +347,8 @@ noremap <C-x> <C-W>c
 "}}}
 "{{{ gist-vim
 	let g:gist_open_browser_after_post = 1
+"}}}
+"{{{ easymotion
+	let g:EasyMotion_leader_key = 'q'
 "}}}
 " vim: foldenable foldmethod=marker foldcolumn=1 foldlevel=0
