@@ -54,6 +54,7 @@
 	Bundle 'showmarks--Politz'
 	Bundle 'EnhancedJumps'
 	Bundle 'IndexedSearch'
+	Bundle 'QFixToggle'
 	"}}}
 "}}} 
 "{{{ Basic
@@ -165,6 +166,8 @@
 	noremap <M-l> :bn<CR>
 	noremap <C-Tab> :bn<CR>
 	nnoremap <leader>f gg=G
+	nnoremap <c-down> ]czz 
+	nnoremap <c-up> [czz 
 "}}}
 "{{{Semicolon macro
 	let @p='A;'
@@ -351,4 +354,26 @@ noremap <C-x> <C-W>c
 "{{{ easymotion
 	let g:EasyMotion_leader_key = 'q'
 "}}}
+"{{{ firefox autorefresh
+autocmd BufWriteCmd *.html,*.css,*.gtpl,*.ctp,*.js :call Refresh_firefox()
+function! Refresh_firefox()
+  if &modified
+    write
+    silent !echo  'vimYo = content.window.pageYOffset;
+          \ vimXo = content.window.pageXOffset;
+          \ BrowserReload();
+          \ content.window.scrollTo(vimXo,vimYo);
+          \ repl.quit();'  |
+          \ nc -w 1 localhost 4242 2>&1 > /dev/null
+  endif
+endfunction
+"}}}
+"{{{ qfixtoggle
+noremap <Leader>q :QFix<CR>
+"}}}
+"{{{ zencoding
+let g:user_zen_next_key = '<c-n>'
+let g:user_zen_prev_key = '<c-m>'
+"}}}
+
 " vim: foldenable foldmethod=marker foldcolumn=1 foldlevel=0
