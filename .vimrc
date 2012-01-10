@@ -40,6 +40,8 @@
 	Bundle 'michaeljsmith/vim-indent-object'
 	Bundle 'kchmck/vim-coffee-script' 
 	Bundle 'Lokaltog/vim-easymotion'
+	Bundle 'Lokaltog/vim-powerline'
+	Bundle 'godlygeek/tabular'
 	"}}}
 	"{{{ vim-scripts repos
 	Bundle 'Gundo'
@@ -55,6 +57,8 @@
 	Bundle 'EnhancedJumps'
 	Bundle 'IndexedSearch'
 	Bundle 'QFixToggle'
+	Bundle 'ZoomWin'
+	"Bundle 'ri-browser'
 	"}}}
 "}}} 
 "{{{ Basic
@@ -125,11 +129,11 @@
 "}}}
 "{{{Statusline
 	set laststatus=2
-	set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [LEN=%L]\ [POS=%04l,%04v][%p%%]
-	set statusline+=\ [CWD=
-	set statusline+=%{getcwd()}
-	set statusline+=]
-	set statusline+=\ %{fugitive#statusline()} 
+	"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [LEN=%L]\ [POS=%04l,%04v][%p%%]
+	"set statusline+=\ [CWD=
+	"set statusline+=%{getcwd()}
+	"set statusline+=]
+	"set statusline+=\ %{fugitive#statusline()} 
 "}}}
 "{{{fugitive.vim
 	nnoremap <Leader>ge :Gedit HEAD<CR>
@@ -376,4 +380,11 @@ let g:user_zen_next_key = '<c-n>'
 let g:user_zen_prev_key = '<c-m>'
 "}}}
 
+"{{{ zoomwin
+	nnoremap <Leader>o :ZoomWin<CR>
+"}}}
+"{{{ staging - next and previous line with same indent
+	nnoremap <M-b> k:call search('^'. matchstr(getline(line('.')+1), '\(\s*\)') .'\S', 'b')<CR>^
+	nnoremap <M-f> :call search('^'. matchstr(getline(line('.')), '\(\s*\)') .'\S')<CR>^
+"}}}
 " vim: foldenable foldmethod=marker foldcolumn=1 foldlevel=0
