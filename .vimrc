@@ -386,5 +386,11 @@ let g:user_zen_prev_key = '<c-m>'
 "{{{ staging - next and previous line with same indent
 	nnoremap <M-b> k:call search('^'. matchstr(getline(line('.')+1), '\(\s*\)') .'\S', 'b')<CR>^
 	nnoremap <M-f> :call search('^'. matchstr(getline(line('.')), '\(\s*\)') .'\S')<CR>^
+	inoremap jj  
+	inoremap kk  
+	let g:fuf_buffer_keyDelete = '<Del>'
+	nnoremap <C-s> :w<CR>
+	inoremap <C-s> :w<CR>
+
 "}}}
 " vim: foldenable foldmethod=marker foldcolumn=1 foldlevel=0
