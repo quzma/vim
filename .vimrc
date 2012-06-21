@@ -87,14 +87,14 @@
 "}}}
 "{{{Colors and visual
 	if has("gui_running")
-		:colorscheme solarized
+		:colorscheme zenburn
 		:set background=dark
 		call togglebg#map("<F1>")
 	else
 		:colorscheme zenburn
 	endif
 	set number
-	set guifont=Dina\ 10
+	"set guifont=Dina\ 10
 	if has("gui_running")
 		set lines=90 columns=230
 	endif
